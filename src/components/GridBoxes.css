@@ -69,17 +69,28 @@
 
 .drop-zones-container {
   display: flex;
+  margin: 2vh 0;
+  border: 2px solid black;
 }
 
 .logic-panel {
   display: flex;
+  margin: 2vh 0;
 }
 
 .arrow-button {
   border: 2px solid black;
-  margin: 2px;
+  margin: 4px;
   width: 3vh;
   height: 3vh;
   text-align: center;
   font-weight: bolder;
+}
+
+.playbtn{
+  margin: 1vh;
+}
+
+.deletebtn{
+  margin: 1vh 0;
 }

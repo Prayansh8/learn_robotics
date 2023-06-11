@@ -1,5 +1,5 @@
 import React from "react";
-import Grid from "./components/Grid";
+// import Grid from "./components/Grid";
 import GridBoxes from "./components/Dev";
 
 const App = () => {
