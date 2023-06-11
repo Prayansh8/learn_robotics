@@ -14,8 +14,72 @@
 
 .robot {
   background-color: #ffcc00; /* Set the background color of the robot */
+  font-size: 30px;
+  padding: 1vh;
+  text-align: center;
 }
 
 .end {
   background-color: red; /* Set the background color of the end square */
+}
+
+/* dev */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  width: 400px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+}
+
+.box {
+  background-color: rgb(255 221 0);
+  border: 1px solid gray;
+}
+
+.end-square {
+  background-color: red;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  border: 2px solid black;
+  margin: 4px;
+  padding: 4px;
+  width: 4%;
+  height: 30px;
+  /* Add your desired styling for the flex items here */
+}
+.direction-button {
+  cursor: move;
+}
+
+.drop-zone {
+  border: 2px solid black;
+  width: 8vh;
+  height: 3vh;
+  margin: 1vh;
+  text-align: center;
+  padding: 1vh;
+}
+
+.drop-zones-container {
+  display: flex;
+}
+
+.logic-panel {
+  display: flex;
+}
+
+.arrow-button {
+  border: 2px solid black;
+  margin: 2px;
+  width: 3vh;
+  height: 3vh;
+  text-align: center;
+  font-weight: bolder;
 }

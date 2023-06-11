@@ -1,14 +1,12 @@
-// src/App.js
-import React, { useState } from "react";
-// import Grid from './components/Grid';
-// import LogicPanel from './components/LogicPanel';
-// import Robot from './components/Robot';
-import GridBoxes from "./components/Grid";
+import React from "react";
+import Grid from "./components/Grid";
+import GridBoxes from "./components/Dev";
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <h1>Grid of Boxes</h1>
+      {/* <Grid /> */}
       <GridBoxes />
     </div>
   );
