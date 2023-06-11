@@ -1,0 +1,21 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns */
+  grid-template-rows: repeat(5, 1fr); /* 5 rows */
+  gap: 10px; /* Add some gap between the boxes */
+  width: 400px; /* Adjust the width to fit the grid nicely */
+}
+
+.box {
+  background-color: #eaeaea; /* Set the background color of the boxes */
+  border: 1px solid #ccc; /* Add a border for visual separation */
+  height: 100%; /* Make the boxes fill the grid cells */
+}
+
+.robot {
+  background-color: #ffcc00; /* Set the background color of the robot */
+}
+
+.end {
+  background-color: red; /* Set the background color of the end square */
+}
