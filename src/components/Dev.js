@@ -165,10 +165,14 @@ const GridBoxes = () => {
         >
           <FaLongArrowAltRight />
         </div>
-        <button onClick={handlePlay} disabled={!isRestarted}>
+        <button
+          className="playbtn"
+          onClick={handlePlay}
+          disabled={!isRestarted}
+        >
           <BsFillPlayFill /> Play
         </button>
-        <button onClick={handleReset}>
+        <button className="deletebtn" onClick={handleReset}>
           <BiReset /> Reset
         </button>
       </div>
