@@ -23,30 +23,30 @@ const GridBoxes = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleMove = (direction) => {
-    const { row, col } = robotPosition;
-    let newRow = row;
-    let newCol = col;
+  // const handleMove = (direction) => {
+  //   const { row, col } = robotPosition;
+  //   let newRow = row;
+  //   let newCol = col;
 
-    switch (direction) {
-      case "up":
-        newRow = Math.max(0, row - 1);
-        break;
-      case "down":
-        newRow = Math.min(gridSize - 1, row + 1);
-        break;
-      case "left":
-        newCol = Math.max(0, col - 1);
-        break;
-      case "right":
-        newCol = Math.min(gridSize - 1, col + 1);
-        break;
-      default:
-        return;
-    }
+  //   switch (direction) {
+  //     case "up":
+  //       newRow = Math.max(0, row - 1);
+  //       break;
+  //     case "down":
+  //       newRow = Math.min(gridSize - 1, row + 1);
+  //       break;
+  //     case "left":
+  //       newCol = Math.max(0, col - 1);
+  //       break;
+  //     case "right":
+  //       newCol = Math.min(gridSize - 1, col + 1);
+  //       break;
+  //     default:
+  //       return;
+  //   }
 
-    setRobotPosition({ row: newRow, col: newCol });
-  };
+  //   setRobotPosition({ row: newRow, col: newCol });
+  // };
 
   const handleDragStart = (e, direction) => {
     e.dataTransfer.setData("text/plain", direction);
@@ -76,6 +76,30 @@ const GridBoxes = () => {
   };
 
   useEffect(() => {
+    const handleMove = (direction) => {
+      const { row, col } = robotPosition;
+      let newRow = row;
+      let newCol = col;
+
+      switch (direction) {
+        case "up":
+          newRow = Math.max(0, row - 1);
+          break;
+        case "down":
+          newRow = Math.min(gridSize - 1, row + 1);
+          break;
+        case "left":
+          newCol = Math.max(0, col - 1);
+          break;
+        case "right":
+          newCol = Math.min(gridSize - 1, col + 1);
+          break;
+        default:
+          return;
+      }
+
+      setRobotPosition({ row: newRow, col: newCol });
+    };
     if (isPlaying) {
       if (currentIndex < directions.length) {
         const direction = directions[currentIndex];
@@ -86,7 +110,7 @@ const GridBoxes = () => {
         setCurrentIndex(0);
       }
     }
-  }, [currentIndex, directions, isPlaying]);
+  }, [currentIndex, directions, isPlaying,robotPosition]);
 
   // Generate an array of box elements
   const boxes = [];
@@ -165,14 +189,10 @@ const GridBoxes = () => {
         >
           <FaLongArrowAltRight />
         </div>
-        <button
-          className="playbtn"
-          onClick={handlePlay}
-          disabled={!isRestarted}
-        >
+        <button onClick={handlePlay} disabled={!isRestarted}>
           <BsFillPlayFill /> Play
         </button>
-        <button className="deletebtn" onClick={handleReset}>
+        <button onClick={handleReset}>
           <BiReset /> Reset
         </button>
       </div>
