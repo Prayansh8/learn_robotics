@@ -8,12 +8,12 @@
 
 .rightbox {
   width: 30%;
-  background-color: #ccc;
+  background-color: #e2e2e2;
 }
 
 .leftbox {
   width: 70%;
-  background-color: rgb(0, 0, 60);
+  background-color: rgb(1, 1, 26);
 }
 
 .grid-container {
@@ -25,7 +25,7 @@
 }
 
 .buildcontainer {
-  background-color: #140f6d;
+  background-color: #110e54;
   padding: 4vh;
   display: flex;
 }
@@ -144,8 +144,8 @@
 .logic-panel {
   display: flex;
   margin: 0;
-  background-color: #030038;
-  padding: 1vh;
+  background-color: #110e54;
+  padding: 2vh;
 }
 
 .arrow-button {
@@ -201,4 +201,85 @@
   margin: 0;
   padding: 0;
   font-size: 20px;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+  .container {
+    width: 100%; /* Adjust the width to fit the screen */
+  }
+
+  .rightbox {
+    width: 100%; /* Make the rightbox full-width for mobile */
+    padding: 0 0 2vh 0;
+  }
+
+  .leftbox {
+    width: 100%; /* Make the leftbox full-width for mobile */
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(5, 0.4fr); /* 5 columns */
+    grid-template-rows: repeat(5, 0.4fr); /* 5 rows */
+    width: 300px; /* Adjust the width to fit the grid nicely */
+    height: 300px;
+  }
+
+  .grid-container,
+  .buildcontainer {
+    padding: 0vh;
+    width: 100%; /* Make the grid-container and buildcontainer full-width for mobile */
+  }
+
+  .instruction {
+    width: 100%; /* Make the instruction box full-width for mobile */
+    margin: 2vh 0; /* Adjust the margin for mobile */
+  }
+
+  .buildcontainer {
+    flex-direction: column; /* Stack the buildcontainer content vertically for mobile */
+  }
+  .maincontainer {
+    display: block;
+  }
+  .robot {
+    font-size: 30px;
+    padding: 2px;
+  }
+
+  .drop-zone {
+    width: 3vh;
+    height: 4vh;
+    margin: 0vh 3px 0 0;
+    padding: 0;
+  }
+
+  .logicpanel {
+    padding: 1vh 2vh;
+  }
+  .arrow-button svg {
+    font-size: 14px;
+  }
+
+  .arrow-button {
+    margin: 2px;
+    width: 2vh;
+    height: 2vh;
+    padding: 8px;
+  }
+}
+
+/* Media query for tablet devices */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 90%; /* Adjust the width to fit the screen */
+  }
+
+  .rightbox {
+    width: 40%; /* Adjust the width for tablets */
+  }
+
+  .leftbox {
+    width: 60%; /* Adjust the width for tablets */
+  }
 }

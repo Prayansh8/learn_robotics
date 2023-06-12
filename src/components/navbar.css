@@ -1,0 +1,87 @@
+.navbar {
+  background-color: rgb(0, 0, 64);
+  color: rgb(234, 234, 234);
+  height: 70px;
+}
+
+.learntext {
+  background-color: #ccc;
+  padding: 2vh;
+}
+.learntext p {
+  font-size: 24px;
+  margin: 0;
+  padding: 0 0 0 38px;
+  font-weight: 500;
+}
+.leransvg svg {
+  position: absolute;
+  font-size: 24px;
+  margin: 6px;
+}
+
+.learnpera {
+  margin: 4vh;
+}
+
+.navicon svg {
+  font-size: 30px;
+  margin: 2vh 4vh;
+  position: absolute;
+}
+.navicon div {
+  padding: 2vh 9vh;
+  font-size: 22px;
+}
+
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 767px) {
+  .navbar {
+    height: 60px; /* Adjust the height for mobile */
+  }
+
+  .learntext p {
+    font-size: 20px; /* Decrease the font size for mobile */
+    padding: 0 0 0 34px; /* Adjust the padding for mobile */
+  }
+
+  .navicon svg {
+    font-size: 24px; /* Decrease the font size for mobile */
+    margin: 2vh 3vh; /* Adjust the margins for mobile */
+  }
+
+  .navicon div {
+    padding: 2vh 0 0 8vh;
+    font-size: 18px;
+  }
+  
+.learnpera {
+  margin: 2vh;
+}
+.leransvg svg {
+  margin: 3px;
+}
+}
+
+/* Media query for tablet devices */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .navbar {
+    height: 65px; /* Adjust the height for tablets */
+  }
+
+  .learntext p {
+    font-size: 20px; /* Adjust the font size for tablets */
+    padding: 0 0 0 32px; /* Adjust the padding for tablets */
+  }
+
+  .navicon svg {
+    font-size: 26px; /* Adjust the font size for tablets */
+    margin: 2vh 3.5vh; /* Adjust the margins for tablets */
+  }
+
+  .navicon div {
+    padding: 2vh 7vh; /* Adjust the padding for tablets */
+    font-size: 20px; /* Adjust the font size for tablets */
+  }
+}
