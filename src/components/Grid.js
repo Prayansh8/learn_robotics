@@ -23,31 +23,6 @@ const GridBoxes = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // const handleMove = (direction) => {
-  //   const { row, col } = robotPosition;
-  //   let newRow = row;
-  //   let newCol = col;
-
-  //   switch (direction) {
-  //     case "up":
-  //       newRow = Math.max(0, row - 1);
-  //       break;
-  //     case "down":
-  //       newRow = Math.min(gridSize - 1, row + 1);
-  //       break;
-  //     case "left":
-  //       newCol = Math.max(0, col - 1);
-  //       break;
-  //     case "right":
-  //       newCol = Math.min(gridSize - 1, col + 1);
-  //       break;
-  //     default:
-  //       return;
-  //   }
-
-  //   setRobotPosition({ row: newRow, col: newCol });
-  // };
-
   const handleDragStart = (e, direction) => {
     e.dataTransfer.setData("text/plain", direction);
   };
@@ -110,7 +85,7 @@ const GridBoxes = () => {
         setCurrentIndex(0);
       }
     }
-  }, [currentIndex, directions, isPlaying,robotPosition]);
+  }, [currentIndex, directions, isPlaying, robotPosition]);
 
   // Generate an array of box elements
   const boxes = [];
@@ -121,7 +96,7 @@ const GridBoxes = () => {
       row === robotPosition.row && col === robotPosition.col ? (
         <Robot />
       ) : row === gridSize - 1 && col === gridSize - 1 ? (
-        "🟥"
+        <div style={{backgroundColor:"red", width:"100%", height:"100%"}}></div>
       ) : null;
     const boxClass = boxContent ? "box with-content" : "box";
     boxes.push(
@@ -158,43 +133,81 @@ const GridBoxes = () => {
 
   return (
     <div>
-      <div className="grid-container">{boxes}</div>
-      <div className="drop-zones-container">{dropZones}</div>
-      <div className="logic-panel">
-        <div
-          className="arrow-button"
-          draggable="true"
-          onDragStart={(e) => handleDragStart(e, "up")}
-        >
-          <FaLongArrowAltUp />
+      <div className="maincontainer">
+        <div className="rightbox"></div>
+
+        <div className="leftbox">
+          <div className="buildtext">
+            <p>Build</p>
+          </div>
+          <div className="buildcontainer">
+            <div className="grid-container">{boxes}</div>
+            <div className="instruction">
+              <div className="inctiontext">
+                <p>Instructions Implemented</p>
+              </div>
+              <div className="robotmove">
+                <p>Robot Move Right</p>
+                <p>Robot Move Down</p>
+                <p>Robot Move Down</p>
+                <p>Robot Move Right</p>
+                <p>Robot Move Down</p>
+                <p>Robot Move Right</p>
+                <p>Robot Move Right</p>
+                <p>Robot Move Down</p>
+                <h4>
+                  <FaLongArrowAltLeft />
+                  Robot reached the destination.
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div className="logicpanel">
+            <p>Logic Panel </p>
+            <div className="drop-zones-container">{dropZones}</div>
+          </div>
+          <div className="logic-panel">
+            <div
+              className="arrow-button"
+              draggable="true"
+              onDragStart={(e) => handleDragStart(e, "left")}
+            >
+              <FaLongArrowAltLeft />
+            </div>
+            <div
+              className="arrow-button"
+              draggable="true"
+              onDragStart={(e) => handleDragStart(e, "up")}
+            >
+              <FaLongArrowAltUp />
+            </div>
+            <div
+              className="arrow-button"
+              draggable="true"
+              onDragStart={(e) => handleDragStart(e, "down")}
+            >
+              <FaLongArrowAltDown />
+            </div>
+
+            <div
+              className="arrow-button"
+              draggable="true"
+              onDragStart={(e) => handleDragStart(e, "right")}
+            >
+              <FaLongArrowAltRight />
+            </div>
+            <button
+              onClick={handlePlay}
+              disabled={!isRestarted}
+              className="playbtn"
+            >
+              <BsFillPlayFill /> <span>Play</span>
+            </button>
+            <button onClick={handleReset} className="deletebtn">
+              <BiReset />
+            </button>
+          </div>
         </div>
-        <div
-          className="arrow-button"
-          draggable="true"
-          onDragStart={(e) => handleDragStart(e, "down")}
-        >
-          <FaLongArrowAltDown />
-        </div>
-        <div
-          className="arrow-button"
-          draggable="true"
-          onDragStart={(e) => handleDragStart(e, "left")}
-        >
-          <FaLongArrowAltLeft />
-        </div>
-        <div
-          className="arrow-button"
-          draggable="true"
-          onDragStart={(e) => handleDragStart(e, "right")}
-        >
-          <FaLongArrowAltRight />
-        </div>
-        <button onClick={handlePlay} disabled={!isRestarted}>
-          <BsFillPlayFill /> Play
-        </button>
-        <button onClick={handleReset}>
-          <BiReset /> Reset
-        </button>
       </div>
     </div>
   );
