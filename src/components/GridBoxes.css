@@ -31,9 +31,9 @@
 }
 
 .instruction {
-  margin: 0 2vh;
+  margin: 0 4vh;
   background-color: rgb(3, 0, 56);
-  width: 40%;
+  width: 60%;
 }
 
 .inctiontext {
@@ -144,10 +144,12 @@
 .logic-panel {
   display: flex;
   margin: 0;
+}
+
+.buttonslp {
   background-color: #110e54;
   padding: 2vh;
 }
-
 .arrow-button {
   border: 2px solid black;
   margin: 4px;
@@ -201,6 +203,11 @@
   margin: 0;
   padding: 0;
   font-size: 20px;
+}
+.robotmovingtext {
+  margin: 2px;
+  color: white;
+  font-weight: 600;
 }
 
 /* Media query for mobile devices */

@@ -75,14 +75,15 @@ const GridBoxes = () => {
         default:
           return;
       }
-
       setRobotPosition({ row: newRow, col: newCol });
     };
     if (isPlaying) {
       if (currentIndex < directions.length) {
         const direction = directions[currentIndex];
-        handleMove(direction);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
+        setTimeout(() => {
+          handleMove(direction);
+          setCurrentIndex((prevIndex) => prevIndex + 1);
+        }, 500);
       } else {
         setIsPlaying(false);
         setCurrentIndex(0);
@@ -146,7 +147,9 @@ const GridBoxes = () => {
 
         <div className="leftbox">
           <div className="buildtext">
-          <p><SiReadthedocs /> Build</p>
+            <p>
+              <SiReadthedocs /> Build
+            </p>
           </div>
           <div className="buildcontainer">
             <div className="grid-container">{boxes}</div>
@@ -171,49 +174,54 @@ const GridBoxes = () => {
             </div>
           </div>
           <div className="logicpanel">
-            <p>Logic Panel </p>
+            <p>Logic Panel ( Drag the arrows and drop here. )</p>
             <div className="drop-zones-container">{dropZones}</div>
           </div>
-          <div className="logic-panel">
-            <div
-              className="arrow-button"
-              draggable="true"
-              onDragStart={(e) => handleDragStart(e, "left")}
-            >
-              <FaLongArrowAltLeft />
-            </div>
-            <div
-              className="arrow-button"
-              draggable="true"
-              onDragStart={(e) => handleDragStart(e, "up")}
-            >
-              <FaLongArrowAltUp />
-            </div>
-            <div
-              className="arrow-button"
-              draggable="true"
-              onDragStart={(e) => handleDragStart(e, "down")}
-            >
-              <FaLongArrowAltDown />
-            </div>
+          <div className="buttonslp">
+            <div className="logic-panel">
+              <div
+                className="arrow-button"
+                draggable="true"
+                onDragStart={(e) => handleDragStart(e, "left")}
+              >
+                <FaLongArrowAltLeft />
+              </div>
+              <div
+                className="arrow-button"
+                draggable="true"
+                onDragStart={(e) => handleDragStart(e, "up")}
+              >
+                <FaLongArrowAltUp />
+              </div>
+              <div
+                className="arrow-button"
+                draggable="true"
+                onDragStart={(e) => handleDragStart(e, "down")}
+              >
+                <FaLongArrowAltDown />
+              </div>
 
-            <div
-              className="arrow-button"
-              draggable="true"
-              onDragStart={(e) => handleDragStart(e, "right")}
-            >
-              <FaLongArrowAltRight />
+              <div
+                className="arrow-button"
+                draggable="true"
+                onDragStart={(e) => handleDragStart(e, "right")}
+              >
+                <FaLongArrowAltRight />
+              </div>
+              <button
+                onClick={handlePlay}
+                disabled={!isRestarted}
+                className="playbtn"
+              >
+                <BsFillPlayFill /> <span>Play</span>
+              </button>
+              <button onClick={handleReset} className="deletebtn">
+                <BiReset />
+              </button>
             </div>
-            <button
-              onClick={handlePlay}
-              disabled={!isRestarted}
-              className="playbtn"
-            >
-              <BsFillPlayFill /> <span>Play</span>
-            </button>
-            <button onClick={handleReset} className="deletebtn">
-              <BiReset />
-            </button>
+            <div className="robotmovingtext">
+              <span>( The robot will run after clicking the play button. )</span>
+            </div>
           </div>
         </div>
       </div>
