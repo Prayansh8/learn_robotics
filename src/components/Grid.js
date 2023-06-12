@@ -9,6 +9,9 @@ import {
 } from "react-icons/fa";
 import { BsFillPlayFill } from "react-icons/bs";
 import { BiReset } from "react-icons/bi";
+import { SiReadthedocs } from "react-icons/si";
+import Navbar from "./Navbar";
+import Learn from "./Learn";
 
 const GridBoxes = () => {
   const gridSize = 5; // Number of rows and columns
@@ -96,7 +99,9 @@ const GridBoxes = () => {
       row === robotPosition.row && col === robotPosition.col ? (
         <Robot />
       ) : row === gridSize - 1 && col === gridSize - 1 ? (
-        <div style={{backgroundColor:"red", width:"100%", height:"100%"}}></div>
+        <div
+          style={{ backgroundColor: "red", width: "100%", height: "100%" }}
+        ></div>
       ) : null;
     const boxClass = boxContent ? "box with-content" : "box";
     boxes.push(
@@ -133,12 +138,17 @@ const GridBoxes = () => {
 
   return (
     <div>
+      <Navbar />
       <div className="maincontainer">
-        <div className="rightbox"></div>
+        <div className="rightbox">
+          <Learn />
+        </div>
 
         <div className="leftbox">
           <div className="buildtext">
-            <p>Build</p>
+            <p>
+              <SiReadthedocs /> Build
+            </p>
           </div>
           <div className="buildcontainer">
             <div className="grid-container">{boxes}</div>
