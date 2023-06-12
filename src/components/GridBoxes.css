@@ -249,13 +249,13 @@
 
   .drop-zone {
     width: 3vh;
-    height: 4vh;
-    margin: 0vh 3px 0 0;
+    height: 3vh;
+    margin: 0vh 2px 0 0;
     padding: 0;
   }
 
   .logicpanel {
-    padding: 1vh 2vh;
+    padding: 1vh 1vh;
   }
   .arrow-button svg {
     font-size: 14px;
