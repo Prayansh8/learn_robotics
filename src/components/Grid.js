@@ -13,7 +13,7 @@ import { SiReadthedocs } from "react-icons/si";
 import Navbar from "./Navbar";
 import Learn from "./Learn";
 
-const GridBoxes = () => {
+const Grid = () => {
   const gridSize = 5; // Number of rows and columns
   const totalBoxes = gridSize * gridSize;
 
@@ -61,16 +61,16 @@ const GridBoxes = () => {
 
       switch (direction) {
         case "up":
-          newRow = Math.max(0, row - 1);
+          newRow = row === 0 ? gridSize - 1 : row - 1;
           break;
         case "down":
-          newRow = Math.min(gridSize - 1, row + 1);
+          newRow = row === gridSize - 1 ? 0 : row + 1;
           break;
         case "left":
-          newCol = Math.max(0, col - 1);
+          newCol = col === 0 ? gridSize - 1 : col - 1;
           break;
         case "right":
-          newCol = Math.min(gridSize - 1, col + 1);
+          newCol = col === gridSize - 1 ? 0 : col + 1;
           break;
         default:
           return;
@@ -158,14 +158,13 @@ const GridBoxes = () => {
                 <p>Instructions Implemented</p>
               </div>
               <div className="robotmove">
-                <p>Robot Move Right</p>
+                <p>Robot Move Left</p>
+                <p>Robot Move Up</p>
+                <p>Robot Move Left</p>
+                <p>Robot Move Left</p>
                 <p>Robot Move Down</p>
-                <p>Robot Move Down</p>
-                <p>Robot Move Right</p>
-                <p>Robot Move Down</p>
-                <p>Robot Move Right</p>
-                <p>Robot Move Right</p>
-                <p>Robot Move Down</p>
+                <p>Robot Move Left</p>
+                <p>Robot Move Up</p>
                 <h4>
                   <FaLongArrowAltLeft />
                   Robot reached the destination.
@@ -220,7 +219,9 @@ const GridBoxes = () => {
               </button>
             </div>
             <div className="robotmovingtext">
-              <span>( The robot will run after clicking the play button. )</span>
+              <span>
+                ( The robot will run after clicking the play button. )
+              </span>
             </div>
           </div>
         </div>
@@ -229,4 +230,4 @@ const GridBoxes = () => {
   );
 };
 
-export default GridBoxes;
+export default Grid;

@@ -1,12 +1,10 @@
 import React from "react";
-// import Grid from "./components/Grid";
-import GridBoxes from "./components/Dev";
-import "./App.css"
+import "./App.css";
+import Grid from "./components/Grid";
 const App = () => {
   return (
     <div className="App">
-      {/* <Grid /> */}
-      <GridBoxes />
+      <Grid />
     </div>
   );
 };
