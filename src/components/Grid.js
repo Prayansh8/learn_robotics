@@ -113,7 +113,7 @@ const Grid = () => {
   }
 
   const dropZones = [];
-  for (let i = 1; i <= 14; i++) {
+  for (let i = 1; i <= 10; i++) {
     const direction = directions[i - 1] || ""; // Get the direction value or an empty string if it doesn't exist
     dropZones.push(
       <div
@@ -219,7 +219,7 @@ const Grid = () => {
               </button>
             </div>
             <div className="robotmovingtext">
-              <span>
+              <span className="platTextSpan">
                 ( The robot will run after clicking the play button. )
               </span>
             </div>
