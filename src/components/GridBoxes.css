@@ -57,6 +57,7 @@
   margin: 0;
   color: rgb(222, 222, 222);
   font-weight: 400;
+  font-size: 18px;
 }
 .robotmove h4 {
   margin: 2vh 0;
@@ -138,7 +139,7 @@
   color: white;
   margin: 0;
   padding: 1vh 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 .logic-panel {
@@ -209,7 +210,9 @@
   color: white;
   font-weight: 600;
 }
-
+.platTextSpan {
+  font-size: 18px;
+}
 /* Media query for mobile devices */
 @media only screen and (max-width: 767px) {
   .container {
@@ -234,8 +237,9 @@
 
   .grid-container,
   .buildcontainer {
-    padding: 0vh;
-    width: 100%; /* Make the grid-container and buildcontainer full-width for mobile */
+    padding: 1vh;
+    margin: auto;
+    width: 96%; /* Make the grid-container and buildcontainer full-width for mobile */
   }
 
   .instruction {
@@ -255,8 +259,8 @@
   }
 
   .drop-zone {
-    width: 3vh;
-    height: 3vh;
+    width: 4vh;
+    height: 4vh;
     margin: 0vh 2px 0 0;
     padding: 0;
   }
@@ -273,6 +277,18 @@
     width: 2vh;
     height: 2vh;
     padding: 8px;
+  }
+  .platTextSpan {
+    font-size: 12px;
+  }
+  .robotmove p {
+    font-size: 14px;
+  }
+  .robotmove {
+    padding: 2vh 4vh 0;
+  }
+  .logicpanel p {
+    font-size: 14px;
   }
 }
 
