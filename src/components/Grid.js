@@ -173,7 +173,7 @@ const Grid = () => {
             </div>
           </div>
           <div className="logicpanel">
-            <p>Logic Panel ( Drag the arrows and drop here. )</p>
+            <p>Logic Panel ( Tap and Hold, Drag the arrows and drop here. )</p>
             <div className="drop-zones-container">{dropZones}</div>
           </div>
           <div className="buttonslp">
